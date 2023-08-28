@@ -1,0 +1,86 @@
+@import "colors"
+
+* {
+  font: "UbuntuMono Nerd Font 14";
+  foreground: @foreground;
+  background-color: @background-darker;
+  border: 1px;
+  transparent: rgba(46, 52, 64, 0);
+}
+
+window {
+  width: 1200;
+  height: 570;
+
+  orientation: horizontal;
+  location: center;
+  anchor: center;
+  border-radius: 20px;
+  spacing: 0;
+  children: [ mainbox ];
+}
+
+mainbox {
+  spacing: 0;
+  children: [ inputbar, message, listview ];
+}
+
+inputbar {
+  color: @selection;
+  margin: 10px;
+  padding: 10px;
+  border: 3px;
+  border-color: @purple;
+  border-radius: 50px;
+}
+
+message {
+  border: 0;
+  padding: 0;
+}
+
+entry,
+prompt,
+case-indicator {
+  text-font: inherit;
+  text-color: inherit;
+}
+
+entry {
+  cursor: pointer;
+}
+
+listview {
+  layout: vertical;
+  padding: 10px;
+  lines: 12;
+  columns: 7;
+  border: 0;
+}
+
+element {
+  color: @cyan;
+  orientation: vertical;
+}
+
+element-text,
+element-icon {
+  background-color: inherit;
+  text-color: inherit;
+  horizontal-align: 0.5;
+}
+
+element-icon {
+  size: 64;
+}
+
+element selected.normal {
+  background-color: @comment;
+  border: 2px;
+  border-color: @cyan;
+  border-radius: 20px;
+}
+
+scrollbar {
+  enabled: true;
+}
